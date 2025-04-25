@@ -12,7 +12,9 @@
   ],
   "type": "module",
   "main": "library/index.js",
-  "scripts": {},
+  "scripts": {
+    "example": "electron example/app.js"
+  },
   "peerDependencies": {
     "electron": "^35.2.1"
   },
