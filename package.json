@@ -1,0 +1,34 @@
+{
+  "name": "electron-client-server-emulation",
+  "description": "Emulate client-server architecture when developing desktop apps with Electron",
+  "author": "Ivan Teplov <iteplov7@gmail.com>",
+  "license": "Apache-2.0",
+  "version": "1.0.0-alpha",
+  "keywords": [
+    "electron",
+    "desktop",
+    "client-server",
+    "API"
+  ],
+  "type": "module",
+  "main": "library/index.js",
+  "scripts": {},
+  "peerDependencies": {
+    "electron": "^35.2.1"
+  },
+  "devDependencies": {
+    "electron": "^35.2.1",
+    "express": "^5.1.0"
+  },
+  "dependencies": {
+    "light-my-request": "^6.6.0"
+  },
+  "homepage": "https://github.com/ivteplo/electron-client-server-emulation#readme",
+  "bugs": {
+    "url": "https://github.com/ivteplo/electron-client-server-emulation/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivteplo/electron-client-server-emulation.git"
+  }
+}
