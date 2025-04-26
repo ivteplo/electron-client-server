@@ -3,7 +3,7 @@
   "description": "Emulate client-server architecture in your Electron apps",
   "author": "Ivan Teplov <iteplov7@gmail.com>",
   "license": "Apache-2.0",
-  "version": "1.0.0-alpha",
+  "version": "1.0.0-beta",
   "keywords": [
     "electron",
     "desktop",
