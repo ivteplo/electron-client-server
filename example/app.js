@@ -3,9 +3,9 @@
 // Licensed under the Apache license 2.0
 //
 
-import { app, protocol, BrowserWindow } from "electron"
+import { app, BrowserWindow } from "electron"
 
-import { createProxy } from "../library/index.js"
+import { applyProxy } from "../library/index.js"
 import { server } from "./server.js"
 
 const baseURL = new URL("http://example-app.local/")
@@ -17,13 +17,7 @@ function createMainWindow() {
 }
 
 function onAppReady() {
-	// Here we register our proxy
-	protocol.handle(
-		// We do not want the ‘:’ at the end
-		baseURL.protocol.slice(0, -1),
-		createProxy(baseURL, server)
-	)
-
+	applyProxy(baseURL, server)
 	createMainWindow()
 }
 
