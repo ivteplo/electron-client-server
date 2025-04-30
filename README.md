@@ -1,6 +1,6 @@
 # Back-End Server Emulation for Electron Applications
 
-When creating an Electron app, you might find yourself having to deal with interprocess communication (IPC). However, you can use the familiar client-server communication approach from web development. **Without starting a local server**. For better understanding, please refer to [the article](https://ivanteplov.vercel.app/en/blog/2025-04-25-electron-client-server-architecture).
+When creating an Electron app, you might find yourself having to deal with interprocess communication (IPC). However, you can use the familiar client-server communication approach from web development. **Without starting a local server**. For better understanding, please refer to [the article](https://ivanteplov.vercel.app/en/blog/posts/2025-04-25-electron-client-server-architecture).
 
 ## Installation
 
