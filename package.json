@@ -18,7 +18,8 @@
   "type": "module",
   "main": "library/index.js",
   "scripts": {
-    "example": "electron example/app.js"
+    "example:ping": "electron example/app.js ping",
+    "example:sse": "electron example/app.js sse"
   },
   "peerDependencies": {
     "electron": "^35.2.1"

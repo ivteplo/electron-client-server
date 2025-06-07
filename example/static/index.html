@@ -1,0 +1,33 @@
+<!--
+© 2025 Ivan Teplov.
+Licensed under the Apache license 2.0.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Example for Server-Sent Events</title>
+	</head>
+	<body>
+		<h1>Server-Sent Events</h1>
+		<pre></pre>
+
+		<script>
+			const eventSource = new EventSource("/api/sse")
+			const pre = document.querySelector("pre")
+
+			eventSource.addEventListener("message", event => {
+				pre.appendChild(document.createTextNode(
+					`Incoming message from the server: ${event.data}.`))
+				pre.appendChild(document.createElement("br"))
+			})
+
+			setTimeout(() => {
+				eventSource.close()
+				pre.appendChild(document.createTextNode("Closed."))
+			}, 10_000)
+		</script>
+	</body>
+</html>
