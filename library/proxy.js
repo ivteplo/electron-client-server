@@ -4,7 +4,7 @@
 //
 
 import inject from "light-my-request"
-import { net, protocol } from "electron"
+import { protocol } from "electron"
 
 import { emulateRequest } from "./emulate.js"
 
@@ -21,7 +21,7 @@ export function createProxy(baseURL, server) {
 		// If the host doesn’t match our base URL:
 		if (url.hostname !== baseURL.hostname) {
 			// Simply send the request.
-			return net.fetch(request)
+			return fetch(request)
 		}
 
 		// Otherwise we want to emulate the request.
