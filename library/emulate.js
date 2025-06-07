@@ -36,13 +36,31 @@ export async function emulateRequest({ server, baseURL, url, request }) {
 			// a Response object with status code “304 Not Modified”
 			// would throw an error.
 			...cacheDisablingHeaders
-		}
+		},
+
+		// the response will be streamed and not accumulated
+		// (needed for Server-Sent Events)
+		payloadAsStream: true,
+
+		// allows to abort the request
+		signal: request.signal
 	}).end()
 
+	// There is no "close" event being emitted
+	// when we call EventSource.close().
+	// That is why we emit an abort event as a workaround.
+	// Otherwise the server might be stuck in an infinite loop.
+	const responseStream = response.stream()
+	responseStream.prependListener("close", () => {
+		request.signal.dispatchEvent(new Event("abort"))
+	})
+
 	// Convert the response to a Node.js’ Response object.
-	return new Response(response.body, {
+	const nativeResponse = new Response(responseStream, {
 		headers: response.headers,
 		status: response.statusCode,
 		statusText: response.statusMessage
 	})
+
+	return nativeResponse
 }
