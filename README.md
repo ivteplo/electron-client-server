@@ -2,6 +2,11 @@
 
 When creating an Electron app, you might find yourself having to deal with interprocess communication (IPC). However, you can use the familiar client-server communication approach from web development. **Without starting a local server**. For better understanding, please refer to [the article](https://ivanteplov.vercel.app/en/blog/posts/2025-04-25-electron-client-server-architecture).
 
+## Features
+
+- Does not run a local server — the requests are emulated.
+- Supports [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events) to enable the back end to communicate with the front end.
+
 ## Installation
 
 ```bash
